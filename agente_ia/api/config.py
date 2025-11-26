@@ -27,7 +27,7 @@ MAX_UPLOAD_SIZE = 10 * 1024 * 1024  # 10 MB
 ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png", "gif", "bmp"}
 
 # Configurações do modelo
-IMG_SIZE = 32
+IMG_SIZE = 128
 CLASSES = {
     0: "Gato 🐱",
     1: "Cachorro 🐕"

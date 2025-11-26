@@ -1,7 +1,7 @@
 import io
 import numpy as np
 from PIL import Image
-from ai_agent_classifier.api.config import IMG_SIZE
+from config import IMG_SIZE
 
 def preprocess_image(image_bytes: bytes) -> np.ndarray:
     """
@@ -58,7 +58,7 @@ def validate_image_file(filename: str) -> bool:
     Returns:
         bool: True se o arquivo é válido, False caso contrário
     """
-    from ai_agent_classifier.api.config import ALLOWED_EXTENSIONS
+    from config import ALLOWED_EXTENSIONS
     
     if "." not in filename:
         return False
@@ -77,7 +77,7 @@ def format_prediction(prediction: float, confidence_threshold: float = 0.5) -> d
     Returns:
         dict: Dicionário com classe, confiança e rótulo
     """
-    from ai_agent_classifier.api.config import CLASSES
+    from config import CLASSES
     
     confidence = prediction if prediction > 0.5 else 1 - prediction
     class_id = 1 if prediction > 0.5 else 0

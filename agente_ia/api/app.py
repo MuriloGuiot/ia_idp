@@ -14,7 +14,7 @@ from pydantic import BaseModel
 # Adicionar diretório pai ao path para importar config e utils
 sys.path.insert(0, str(Path(__file__).parent))
 
-from ai_agent_classifier.api.config import (
+from config import (
     API_TITLE,
     API_VERSION,
     API_DESCRIPTION,
@@ -23,7 +23,7 @@ from ai_agent_classifier.api.config import (
     CLASSES,
     LOG_LEVEL
 )
-from ai_agent_classifier.api.utils import (
+from utils import (
     preprocess_image,
     validate_image_file,
     format_prediction,
