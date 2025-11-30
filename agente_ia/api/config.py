@@ -1,3 +1,5 @@
+# config.py
+
 import os
 from pathlib import Path
 
@@ -5,6 +7,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent.parent
 
 # Caminho do modelo treinado
+# Note: Certifique-se de que a pasta 'model' existe na raiz do projeto (AGENTE_IA/model/)
 MODEL_PATH = BASE_DIR / "model" / "model.h5"
 
 # Configurações da API
@@ -22,11 +25,12 @@ ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
 ]
 
-# Configurações de upload
+# Configurações de upload (mantidas)
 MAX_UPLOAD_SIZE = 10 * 1024 * 1024  # 10 MB
 ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png", "gif", "bmp"}
 
 # Configurações do modelo
+# CORREÇÃO CRÍTICA: Ajustado para 128 (o novo tamanho de treinamento)
 IMG_SIZE = 128
 CLASSES = {
     0: "Gato 🐱",
