@@ -4,10 +4,7 @@ import os
 from pathlib import Path
 
 # Diretório raiz do projeto
-BASE_DIR = Path(__file__).parent.parent
-
-# Caminho do modelo treinado
-# Note: Certifique-se de que a pasta 'model' existe na raiz do projeto (AGENTE_IA/model/)
+BASE_DIR = Path(__file__).resolve().parent.parent 
 MODEL_PATH = BASE_DIR / "model" / "model.h5"
 
 # Configurações da API

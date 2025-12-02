@@ -10,6 +10,7 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
+from config import IMG_SIZE
 
 # Adicionar diretório pai ao path para importar config e utils
 sys.path.insert(0, str(Path(__file__).parent))
@@ -96,7 +97,7 @@ async def load_model():
         logger.info("✅ Modelo carregado com sucesso!")
         
         # Fazer uma predição dummy para aquecimento
-        dummy_input = np.random.rand(1, 32, 32, 3).astype("float32")
+        dummy_input = np.random.rand(1, IMG_SIZE, IMG_SIZE, 3).astype("float32")
         _ = model.predict(dummy_input, verbose=0)
         logger.info("🔥 Modelo aquecido e pronto para predições")
         
